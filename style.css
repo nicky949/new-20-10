@@ -1246,4 +1246,64 @@ body:not(.not-loaded) .header-text {
   animation: glow 3s infinite ease-in-out;
 }
 
+/* Name picker styles */
+.name-picker {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  color: #fff;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+}
+.name-picker__title {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.name-picker__list {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.name-picker__item {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 150ms, transform 150ms;
+}
+.name-picker__item:focus,
+.name-picker__item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Theme overrides when a name is selected - these tweak flower colors slightly.
+   The user said they'll change the exact colors later, so these are placeholders. */
+body.theme-hanh .flower__leaf {
+  background-image: linear-gradient(to top, #ff9bb2, #ffd1e0);
+}
+body.theme-hanh .flower__white-circle::after {
+  background-image: linear-gradient(90deg, #ff9bb2, #ff6b9b);
+}
+
+body.theme-my .flower__leaf {
+  background-image: linear-gradient(to top, #ffd29a, #fff2d1);
+}
+body.theme-my .flower__white-circle::after {
+  background-image: linear-gradient(90deg, #ffd29a, #ffb84d);
+}
+
+body.theme-thuy .flower__leaf {
+  background-image: linear-gradient(to top, #9affc8, #d1fff0);
+}
+body.theme-thuy .flower__white-circle::after {
+  background-image: linear-gradient(90deg, #9affc8, #4dffb8);
+}
+
+
 
